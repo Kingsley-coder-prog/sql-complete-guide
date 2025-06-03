@@ -1,0 +1,4 @@
+-- CREATE TABKE users (
+--     full_name VARCHAR(300) NOT NULL,
+--     yearly_salary INT CHECK (yearly_salary > 0)
+-- )
