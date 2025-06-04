@@ -1,0 +1,34 @@
+-- Task 1: Creating a DB
+-- CREATE DATABASE online_shop;
+-- Task 2 + 3: Creating and configuring a table
+-- CREATE TABLE products (
+--     name VARCHAR(200),
+--     price NUMERIC(10,2), -- 8.99, 12345.99
+--     description TEXT,
+--     amount_in_stock SMALLINT,
+--     image_path VARCHAR(500) -- 'uploads/images/products/some-product.jpg'
+-- );
+-- Task 4: Adding data to the table
+-- INSERT INTO products (price, name, description, amount_in_stock, image_path)
+-- VALUES
+--     (8.99, 'T-Shirt', 'A comfortable cotton t-shirt', 100, 'uploads/images/products/t-shirt.jpg'),
+--     (15.50, 'Jeans', 'Stylish denim jeans', 50, 'uploads/images/products/jeans.jpg'),
+--     (12.00, 'Sneakers', 'Casual sneakers for everyday wear', 75, 'uploads/images/products/sneakers.jpg'),
+--     (20.00, 'Jacket', 'Warm winter jacket', 30, 'uploads/images/products/jacket.jpg'),
+--     (5.99, 'Hat', 'Cool summer hat', 200, 'uploads/images/products/hat.jpg');
+-- Task 5: Add constraints to the table
+-- ALTER TABLE products -- MODIFY COLUMN name VARCHAR(200) NOT NULL,
+-- MODIFY COLUMN price NUMERIC(10,2) NOT NULL CHECK (price > 0),
+-- MODIFY COLUMN description TEXT NOT NULL,
+-- MODIFY COLUMN amount_in_stock SMALLINT CHECK (amount_in_stock >= 0);
+-- ALTER COLUMN name
+-- SET NOT NULL,
+--     ALTER COLUMN price
+-- SET NOT NULL,
+--     ALTER COLUMN description
+-- SET NOT NULL,
+--     ADD CONSTRAINT price_postive CHECK (price > 0),
+--     ADD CONSTRAINT amount_in_stock_positive CHECK (amount_in_stock >= 0);
+-- Task 6: Add id column
+ALTER TABLE products -- ADD COLUMN id INT PRIMARY KEY AUTO_INCREMENT;
+ADD COLUMN id SERIAL PRIMARY KEY;
